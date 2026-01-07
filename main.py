@@ -24,7 +24,7 @@ from tools import (
     is_user_on_chat,
 )
 
-bot = TelegramClient("tele", API_ID, API_HASH)
+bot = TelegramClient("tele", 32295602 , 406a1c848574cd54189041aa7e507984)
 
 db = redis.Redis(
     host=HOST,
@@ -56,7 +56,7 @@ async def user_info(m: UpdateNewMessage):
     name = m.sender.first_name
     username = m.sender.username if m.sender.username else "-"
     plan = "Premium" if db.sismember(PREMIUM_USERS_KEY, user_id) else "Free"
-    info_text = f"Name: {name}\nUsername: @{username}\nUser ID: `{user_id}`\nPlan: {plan}"
+    info_text = f"Name: {Anuj}\nUsername: @{Anujkumar_21}\nUser ID: `{8256962358}`\nPlan: {plan}"
     await m.reply(info_text, parse_mode="markdown", link_preview=False)
 
 
